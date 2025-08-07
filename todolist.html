@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Interactive To Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      color: green;
+      padding: 10px;
+      margin: 5px 0;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    li.completed {
+      color: blue;
+    }
+
+    .checkmark {
+      display: none;
+      font-size: 18px;
+      color: blue;
+    }
+
+    li.completed .checkmark {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Interactive To Do List</h1>
+  <ul id="todo-list">
+    <li onclick="toggleComplete(this)">
+      Buy groceries <span class="checkmark">&#10003;</span>
+    </li>
+    <li onclick="toggleComplete(this)">
+      Call the dentist <span class="checkmark">&#10003;</span>
+    </li>
+    <li onclick="toggleComplete(this)">
+      Finish project report <span class="checkmark">&#10003;</span>
+    </li>
+  </ul>
+
+  <script>
+    function toggleComplete(item) {
+      item.classList.toggle('completed');
+    }
+  </script>
+
+</body>
+</html>
